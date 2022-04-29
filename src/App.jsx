@@ -3,15 +3,20 @@ import './App.css'
 
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
+
+
 import Home from "./pages/Home/Home"
 import About from "./pages/About/About"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
       <BrowserRouter>
+
+        <Navbar />
 
         <div className="container">
           <Routes>
@@ -21,6 +26,8 @@ function App() {
 
           </Routes>
         </div>
+
+        <Footer />
 
       </BrowserRouter>
     </div>
