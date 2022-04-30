@@ -13,6 +13,14 @@ const Navbar = () => {
         <li>
           <NavLink className={({isActive}) => (isActive ? styles.active : "")} to="/">Home</NavLink>
         </li>
+
+        <li>
+          <NavLink className={({isActive}) => (isActive ? styles.active : "")} to="/login">Login</NavLink>
+        </li>
+        <li>
+          <NavLink className={({isActive}) => (isActive ? styles.active : "")} to="/register">Registrar</NavLink>
+        </li>
+
         <li>
           <NavLink className={({isActive}) => (isActive ? styles.active : "")} to="/about">Sobre</NavLink>
         </li>
