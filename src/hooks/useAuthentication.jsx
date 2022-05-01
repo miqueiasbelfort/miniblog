@@ -34,7 +34,7 @@ export const useAuthentication = () => {
 
         try {
             
-            const {user} = createUserWithEmailAndPassword(
+            const {user} = await createUserWithEmailAndPassword(
                 auth,
                 data.email,
                 data.password
@@ -44,7 +44,8 @@ export const useAuthentication = () => {
                 displayName: data.displayName
             })
 
-            
+            setLoading(false)
+
             return user
 
         } catch (error) {
@@ -55,7 +56,7 @@ export const useAuthentication = () => {
             let systemErrorMessage
 
             if(error.message.includes("Password")){
-                systemErrorMessage = "A senha preica conter pelo menos 6 caracteres"
+                systemErrorMessage = "A senha precissa conter pelo menos 6 caracteres"
             
             } else if (error.message.includes("email-already")){
                 systemErrorMessage = "E-mail já cadastrado"
@@ -63,10 +64,9 @@ export const useAuthentication = () => {
                 systemErrorMessage = "Ocorreu um erro, tente mais tarde."
             }
 
+            setLoading(false)
             setError(systemErrorMessage)
         }
-
-        setLoading(false)
 
     }
 
