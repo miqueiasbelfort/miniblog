@@ -1,0 +1,14 @@
+.about {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+.about p {
+    color: #aaa;
+}
+.about a {
+    display: block;
+    padding: 10px 15px;
+}
