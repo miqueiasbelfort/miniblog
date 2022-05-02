@@ -75,7 +75,7 @@ textarea {
     border-radius: 0;
 }
 
-.bnt.btn-outline {
+.btn.btn-outline {
     background-color: transparent;
     border-radius: 0;
     color: #000;
@@ -86,7 +86,7 @@ textarea {
     background-color: #0f730c;
     color: #fff;
 }
-.bnt.btn-outline:hover {
+.btn.btn-outline:hover {
     background-color: #000;
 }
 .btn.btn-danger:hover {
