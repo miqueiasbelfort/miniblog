@@ -15,7 +15,7 @@ const insertReducer = (state, action) => {
             return {loading: true, error: null}
         case 'INSERTED_DOC':
             return {loading: false, error: null}
-        case 'ERRR':
+        case 'ERROR':
             return {loading: false, error: action.payload}
         default:
             return state;
@@ -24,7 +24,7 @@ const insertReducer = (state, action) => {
 }
 
 export const useInsertDocument = (docCollection) => {
-
+ 
     const [response, dispatch] = useReducer(insertReducer, initalState)
 
     //deal with memory leak
