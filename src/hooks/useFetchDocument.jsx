@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config"
-import {collection, query, orderBy, onSnapshot, where} from "firebase/firestore"
 
-export const useFetchDocuments = (docCollection, search = null, uid = null) => {
+import {doc, getDoc} from "firebase/firestore"
 
-    const [documents, setDocuments] = useState(null)
+export const useFetchDocument = (docCollection, id) => {
+
+    const [document, setDocument] = useState(null)
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(null)
 
@@ -14,50 +15,33 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
     useEffect(() => {
 
-        async function loadData() {
+        async function loadDocument() {
             if(cancelled) return
 
             setLoading(true)
-            const collectionRef = await collection(db, docCollection)
-
+           
             try {
                 
-                let q
-                //busca
-                //dashboard
-                if(search) {
-                    q = await query(collectionRef, where("tagsArray", "array-contains", search), orderBy("createdAt", "desc"))
-                }else{
-                    q = await query(collectionRef, orderBy("createdAt", "desc"))
-                }
+                const docRef = await doc(db, docCollection, id)
+                const docSnap = await getDoc(docRef)
 
-                await onSnapshot(q, (querySanpshot) => {
-                    setDocuments(
-                        querySanpshot.docs.map(doc => ({
-                            id: doc.id,
-                            ...doc.data(),
-                        }))
-                    )
-                })
-
+                setDocument(docSnap.data())
                 setLoading(false)
 
             } catch (error) {
-                
                 console.log(error)
                 setError(error.message)
-
                 setLoading(false)
             }
 
         }
-        loadData()
+        loadDocument()
 
-    }, [docCollection, search, uid, cancelled])
+    }, [docCollection, id, cancelled])
 
     useEffect(() => {
         return () => setCancelled(true)
     }, [])
 
-    return {documents, loading, error}
+    return {document, loading, error}
 }

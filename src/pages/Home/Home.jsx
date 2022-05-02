@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import styles from "./Home.module.css"
 
 import { useNavigate, Link } from 'react-router-dom'
-import { useFetchDocuments } from '../../hooks/useFetchDocument'
+import { useFetchDocuments } from '../../hooks/useFetchDocuments'
 
 //components
 import PostDetails from '../../components/PostDetails'
