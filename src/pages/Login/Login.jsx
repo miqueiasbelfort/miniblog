@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <div className={styles.login}>
       <h1>Entrar</h1>
-      <p>Fassa o login para usar o MiniBlog</p>
+      <p>Faça o login para usar o MiniBlog</p>
       <form onSubmit={handleSubmit}>
 
         <label>
