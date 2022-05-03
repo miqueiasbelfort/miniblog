@@ -20,11 +20,11 @@ const Search = () => {
   return (
     <div className={styles.search_container}>
       <h2>{search}</h2>
-      <div>
+      <div className={styles.post}>
           {posts && posts.length === 0 && (
               <div className={styles.noposts}>
                 <p>Nenhum Post foi encontrado...</p>
-                <Link to="/" className="btn btn-dark">Voltar</Link>
+                <Link to="/" className={`btn btn-dark nopost`}>Voltar</Link>
               </div>
           )}
           {posts && posts.map(post => (

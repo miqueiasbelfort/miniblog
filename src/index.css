@@ -104,3 +104,12 @@ button[disabled]{
     padding: 5px;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 768px) {
+    .btn {
+        width: 100px;
+    }
+    .btn.btn-outline {
+        padding: 5px 10px;
+    }
+}

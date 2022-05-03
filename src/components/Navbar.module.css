@@ -27,6 +27,28 @@
     padding: .4em .6em;
 }
 
+@media screen and (max-width: 768px) {
+    .brand {
+        font-size: .8em;
+    }
+    .links_list li button{
+        font-size: .8em;
+    }
+
+    .links_list {
+        align-items: center;   
+    }
+
+    .links_list li {
+        margin-right: .2em;
+    }
+
+    .links_list li a {
+        font-size: .8em;
+        padding: .2em;
+    }
+}
+
 .active {
     background-color: #000;
     color: #fff;

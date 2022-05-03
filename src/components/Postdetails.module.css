@@ -24,3 +24,22 @@
     font-size: .8em;
     margin-bottom: 1em;
 }
+
+@media screen and (max-width: 768px) {
+    .post_detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .post_detail img{
+        max-width: 70%;
+    }
+    .tags{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .tags p {
+        margin-bottom: .1em;
+    }
+}

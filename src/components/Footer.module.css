@@ -6,3 +6,10 @@
     justify-content: center;
     background-color: #EDF3F6;
 }
+
+@media screen and (max-width: 768px) {
+    .footer {
+        height: 120px;
+        text-align: center;
+    }
+}

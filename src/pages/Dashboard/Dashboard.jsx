@@ -29,7 +29,7 @@ const Dashboard = () => {
 
       {posts && posts.length === 0 ? (
         <div className={styles.noposts}>
-          <p>Não foram encontrados posts</p>
+          <p>Você ainda não tem posts</p>
           <Link to="/posts/create" className='btn'>Criar primeiro post</Link>
         </div>
       ) : (
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
           <p>{post.title}</p>
           
-          <div>
+          <div className={styles.action_buttons}>
 
             <Link to={`/posts/${post.id}`} className="btn btn-outline">
               Ver

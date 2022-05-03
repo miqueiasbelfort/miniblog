@@ -33,7 +33,7 @@ const Navbar = () => {
         {user && (
           <>
             <li>
-              <NavLink className={({isActive}) => (isActive ? styles.active : "")} to="/posts/create">Novo Post</NavLink>
+              <NavLink className={({isActive}) => (isActive ? styles.active : "")} to="/posts/create">Postar</NavLink>
             </li>
             <li>
               <NavLink className={({isActive}) => (isActive ? styles.active : "")} to="/dashboard">Dashboard</NavLink>
